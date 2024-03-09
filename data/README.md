@@ -1,9 +1,3 @@
-# data
-
-Place data file(s) in this folder.
-
-Then, include codebooks (variables, and their descriptions) for your data file(s)
-using the following format.
 
 ## spotify
 
@@ -34,6 +28,4 @@ using the following format.
 - `liveness_%`: Presence of live performance elements
 - `speechiness_%`: Amount of spoken words in the song
 
-```{r}
-print(codebook)
-```
+

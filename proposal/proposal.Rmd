@@ -7,6 +7,7 @@ output: html_document
 ```{r load-packages, message = FALSE, echo=FALSE}
 library(tidyverse)
 library(broom)
+library(skimr)
 ```
 
 ## 1. Introduction
@@ -43,6 +44,31 @@ print(glimpse(music))
 
 The outcome variables for the project will be the number of playlists the song is in (on different platforms) and the rank of the song on various charts. The predictor variables will be the various musical elements that describe the song.
 
+This tibble gives a range of energy and danceability to see where songs can end up.
+```{r, echo = FALSE}
+music %>%
+  summarize(min_energy = min(`acousticness_%`),
+            max_energy = max(`acousticness_%`),
+            min_dance = min(`danceability_%`),
+            max_dance = max(`danceability_%`)
+            )
+```
 
+```{r, echo=FALSE, include=FALSE}
 
+music %>%
+  group_by(key) %>%
+  count(key)
+```
 
+This visual shows the most common keys in popular music, which may be useful later in determining the relationship between certain song elements and popularity.
+
+```{r, echo=FALSE}
+ggplot(music, aes(x=key, fill=key)) +
+    geom_bar()
+  
+```
+
+The most useful method for answering the research question will be to plot the various elements in a dot matrix and look for correlation between certain elements and popularity. There are likely other methods that will occur as the project progresses.
+
+To support the hypothesis, the results would need to show clear correlation between energy and popularity, as well as danceability and popularity, and not show much or any correlation between the other musical varibles and popularity.

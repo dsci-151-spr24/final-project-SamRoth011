@@ -4,36 +4,45 @@ author: "Sam Roth"
 output: html_document
 ---
 
-```{r load-packages, message = FALSE}
+```{r load-packages, message = FALSE, echo=FALSE}
 library(tidyverse)
 library(broom)
 ```
 
 ## 1. Introduction
+The aim of this project will be to find out if there is a correlation between the various musical elements of a song and their popularity on various streaming platforms.
 
+The data was obtained from https://www.kaggle.com/datasets/arnavvvvv/spotify-music/data, described as containing information for the "World's most popular songs on Spotify" (as well as other streaming platforms). It was collected from Spotify, Apple, Deezer, and Shazam's own available information online.
+
+Each observation is one of the popular songs on streaming services, and the relevant variables include the song title, name of the artist(s), number of playlists the song is in (for each streaming service), and place of the song on the charts of each streaming service. There are also variables for the different musical elements, including bpm, key, mode, danceability, valence (or positivity), energy, acousticness, instrumentalness, liveness, and speechiness. 
+
+I hypothesize that some variables, such as energy and danceability, will have a greater impact on popularity than others, such as instrumentalness or valence.
 
 
 ## 2. Data
 ```{r, echo=FALSE}
 #| message: false
 
-spotify = read_csv(file = "../data/Popular_Spotify_Songs.csv")
+music = read_csv(file = "../data/Popular_Spotify_Songs.csv")
 
 codebook <- data.frame(
-  Variable = names(spotify),
+  Variable = names(music),
   Description = c("Name of the song", "Name of the artist(s) of the song", "Number of artists contributing to the song", "Year when the song was released", "Month when the song was released", "Day of the month when the song was released", "Number of Spotify playlists the song is included in", "Presence and rank of the song on Spotify charts", "Total number of streams on Spotify", "Number of Apple Music playlists the song is included in", "Presence and rank of the song on Spotify charts", "Number of Deezer playlists the song is included in", "Presence and rank of the song on Deezer charts", "Presence and rank of the song on Shazam charts", "Tempo of the song in beats-per-minute", "Key of the song", "Mode of the song (major or minor)", "Percentage of how suitable the song is for dancing", "Positivity of the song's musical content", "Rating of the energy of the song", "Amount of acoustic sound in the song", "Amount of instrumental content in the song", "Presence of live performance elements", "Amount of spoken words in the song")
 )
 
 print(codebook)
 
 ```
-Glimpse of the spotify dataset
-```{r}
-print(glimpse(spotify))
+Glimpse of the `music` dataset
+```{r, echo=FALSE}
+print(glimpse(music))
 ```
 
 
 ## 3. Data analysis plan
+
+The outcome variables for the project will be the number of playlists the song is in (on different platforms) and the rank of the song on various charts. The predictor variables will be the various musical elements that describe the song.
+
 
 
 

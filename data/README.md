@@ -1,5 +1,5 @@
 
-## spotify
+## Music
 
 #### Dimensions: 24 variables, 953 observations
 

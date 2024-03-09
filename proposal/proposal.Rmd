@@ -14,7 +14,18 @@ library(broom)
 
 
 ## 2. Data
+```{r}
+#| message: false
 
+spotify = read_csv(file = "../data/Popular_Spotify_Songs.csv")
+
+codebook <- data.frame(
+  Variable = names(spotify),
+  Description = c("Name of the song", "Name of the artist(s) of the song", "Number of artists contributing to the song", "Year when the song was released", "Month when the song was released", "Day of the month when the song was released", "Number of Spotify playlists the song is included in", "Presence and rank of the song on Spotify charts", "Total number of streams on Spotify", "Number of Apple Music playlists the song is included in", "Presence and rank of the song on Spotify charts", "Number of Deezer playlists the song is included in", "Presence and rank of the song on Deezer charts", "Presence and rank of the song on Shazam charts", "Tempo of the song in beats-per-minute", "Key of the song", "Mode of the song (major or minor)", "Percentage of how suitable the song is for dancing", "Positivity of the song's musical content", "Rating of the energy of the song", "Amount of acoustic sound in the song", "Amount of instrumental content in the song", "Presence of live performance elements", "Amount of spoken words in the song")
+)
+
+
+```
 
 
 ## 3. Data analysis plan

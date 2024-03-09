@@ -1,6 +1,6 @@
 ---
 title: "Project proposal"
-author: "Your name"
+author: "Sam Roth"
 output: github_document
 ---
 

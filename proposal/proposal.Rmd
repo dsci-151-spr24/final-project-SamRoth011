@@ -1,7 +1,7 @@
 ---
 title: "Project proposal"
 author: "Sam Roth"
-output: html_document
+output: github_document
 ---
 
 ```{r load-packages, message = FALSE, echo=FALSE}
@@ -71,4 +71,4 @@ ggplot(music, aes(x=key, fill=key)) +
 
 The most useful method for answering the research question will be to plot the various elements in a dot matrix and look for correlation between certain elements and popularity. There are likely other methods that will occur as the project progresses.
 
-To support the hypothesis, the results would need to show clear correlation between energy and popularity, as well as danceability and popularity, and not show much or any correlation between the other musical varibles and popularity.
+To support the hypothesis, the results would need to show clear correlation between energy and popularity, as well as danceability and popularity, and not show much or any correlation between the other musical variables and popularity.
